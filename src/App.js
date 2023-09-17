@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import PasswordValidator from './components/PasswordValidator';
+
+/*
+Custom style example
+<PasswordValidator
+      options={[
+        'specialChar',
+        'number',
+        'uppercaseLetter',
+        'noConsecutiveLetters',
+      ]}
+      customStyle={{
+        errorColor: 'blue',
+        circleSize: 50,
+        fontFamily: 'arial'
+      }}
+    />
+
+*/
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={styles.main}>
+     <PasswordValidator
+      options={[
+        'specialChar',
+        'number',
+        'uppercaseLetter',
+        'noConsecutiveLetters',
+      ]}
+    />
     </div>
   );
+}
+
+
+const styles = {
+  main: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh'
+  }
 }
 
 export default App;
